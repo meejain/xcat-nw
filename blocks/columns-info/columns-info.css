@@ -1,0 +1,211 @@
+/* Columns Info Block - Nationwide Style */
+
+.columns-info-container {
+  background-color: #fff;
+  padding: 48px 0;
+}
+
+.columns-info-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.columns-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-info > div > div {
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  padding: 32px 28px;
+  order: 1;
+}
+
+/* No-cards variant for service quality sections */
+.columns-info.no-cards > div > div {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+.columns-info.no-cards img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.columns-info.no-cards h3 {
+  margin-bottom: 20px;
+}
+
+.columns-info > div > .columns-info-img-col {
+  order: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.columns-info > div > .columns-info-img-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Headings */
+.columns-info h2 {
+  margin: 0 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgb(1, 21, 70);
+}
+
+.columns-info h3 {
+  margin: 0 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgb(1, 21, 70);
+}
+
+/* Paragraphs */
+.columns-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 16px;
+}
+
+/* Links */
+.columns-info a {
+  color: rgb(1, 21, 70);
+  text-decoration: underline;
+}
+
+.columns-info a:hover {
+  text-decoration: none;
+}
+
+/* Lists - Popular searches */
+.columns-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columns-info ul li {
+  margin: 0;
+  padding: 8px 0;
+}
+
+.columns-info ul li a {
+  color: rgb(1, 21, 70);
+  text-decoration: underline;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.columns-info ul li a:hover {
+  text-decoration: none;
+}
+
+/* Button styling - strong wrapped links become primary buttons */
+.columns-info p strong a {
+  display: inline-block;
+  background-color: rgb(1, 21, 70);
+  color: #fff !important;
+  padding: 14px 24px;
+  border-radius: 4px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgb(1, 21, 70);
+  transition: background-color 0.2s, color 0.2s;
+  margin: 16px 0 8px;
+}
+
+.columns-info p strong a:hover {
+  background-color: transparent;
+  color: rgb(1, 21, 70) !important;
+}
+
+/* Secondary button - link directly after strong in same paragraph */
+.columns-info p strong + a {
+  display: inline-block;
+  background-color: #fff;
+  color: rgb(1, 21, 70) !important;
+  padding: 14px 24px;
+  border-radius: 4px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgb(1, 21, 70);
+  transition: background-color 0.2s, color 0.2s;
+  margin: 8px 0 8px 12px;
+}
+
+.columns-info p strong + a:hover {
+  background-color: rgb(1, 21, 70);
+  color: #fff !important;
+}
+
+/* Button container */
+.columns-info .button-container {
+  margin: 16px 0 8px;
+}
+
+.columns-info .button-container .button {
+  display: inline-block;
+  background-color: rgb(1, 21, 70);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgb(1, 21, 70);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.columns-info .button-container .button:hover {
+  background-color: transparent;
+  color: rgb(1, 21, 70);
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .columns-info-container {
+    padding: 56px 0;
+  }
+
+  .columns-info-wrapper {
+    padding: 0 32px;
+  }
+
+  .columns-info > div {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .columns-info > div > div {
+    flex: 1;
+    order: unset;
+    padding: 40px 36px;
+  }
+
+  .columns-info > div > .columns-info-img-col {
+    order: unset;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .columns-info h2 {
+    font-size: 1.75rem;
+  }
+}

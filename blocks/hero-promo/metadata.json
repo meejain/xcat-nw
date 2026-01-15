@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-promo",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-01-15T05:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nationwide.co.uk/",
+    "originPage": "homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "promotional-hero",
+    "imagePattern": "badge-icons"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + CTA + badge images",
+    "buttonCount": 1,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "promotional landing pages",
+      "campaign pages with offers"
+    ],
+    "notSuitableFor": [
+      "product detail pages",
+      "article pages",
+      "pages with full-width background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T05:00:00.000Z"
+  }
+}

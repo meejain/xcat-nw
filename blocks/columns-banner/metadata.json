@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-banner",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-15T05:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nationwide.co.uk/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "promotional-banner",
+    "imagePattern": "large-image"
+  },
+  "contentPattern": {
+    "structure": "image column + content column with list and CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "app promotion banners",
+      "feature highlight sections with dark background",
+      "call-to-action banners"
+    ],
+    "notSuitableFor": [
+      "light background content",
+      "simple text columns",
+      "data comparison sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T05:00:00.000Z"
+  }
+}

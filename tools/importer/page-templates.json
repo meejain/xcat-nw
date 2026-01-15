@@ -1,0 +1,91 @@
+{
+  "templates": [
+    {
+      "name": "nationwide-homepage",
+      "urls": ["https://www.nationwide.co.uk/"],
+      "description": "Nationwide Building Society homepage with hero promotion, product navigation, feature cards, app banner, help section, and regulatory information",
+      "blocks": [
+        {
+          "name": "section-hero",
+          "section": true,
+          "selector": "section[data-testid='hero'], .hero-section, main > section:first-child",
+          "blocks": [
+            {
+              "name": "hero-promo",
+              "selector": "[class*='hero'], [class*='banner']:first-child"
+            }
+          ]
+        },
+        {
+          "name": "section-product-nav",
+          "section": true,
+          "selector": "[class*='product-nav'], [class*='quick-links']",
+          "blocks": [
+            {
+              "name": "cards-icon",
+              "selector": "[class*='product-link'], [class*='service-grid'], ul[class*='nav']"
+            }
+          ]
+        },
+        {
+          "name": "section-features",
+          "section": true,
+          "selector": "[class*='feature'], [class*='promo-card']",
+          "blocks": [
+            {
+              "name": "cards-feature",
+              "selector": "[class*='card-container'], [class*='feature-grid']"
+            }
+          ]
+        },
+        {
+          "name": "section-app-banner",
+          "section": true,
+          "sectionMetadata": {
+            "style": "dark"
+          },
+          "selector": "[class*='app-promo'], [class*='dark-section'], [class*='call-checker']",
+          "blocks": [
+            {
+              "name": "columns-banner",
+              "selector": "[class*='two-col'], [class*='media-content']"
+            }
+          ]
+        },
+        {
+          "name": "section-help",
+          "section": true,
+          "selector": "[class*='help-section'], [class*='support']",
+          "blocks": [
+            {
+              "name": "columns-info",
+              "selector": "[class*='two-column'], [class*='split-content']"
+            }
+          ]
+        },
+        {
+          "name": "section-quality-metrics",
+          "section": true,
+          "selector": "[class*='service-quality'], [class*='metrics']",
+          "blocks": [
+            {
+              "name": "columns-info",
+              "selector": "[class*='chart-container'], [class*='comparison']"
+            }
+          ]
+        },
+        {
+          "name": "section-fraud-data",
+          "section": true,
+          "selector": "[class*='fraud'], [class*='scam']",
+          "blocks": [
+            {
+              "name": "columns-info",
+              "selector": "[class*='chart'], [class*='data-comparison']"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

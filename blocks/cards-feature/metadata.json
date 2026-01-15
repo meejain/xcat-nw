@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-01-15T05:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nationwide.co.uk/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-showcase",
+    "imagePattern": "large-image"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraphs + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlight sections",
+      "announcement cards",
+      "promotional content with images"
+    ],
+    "notSuitableFor": [
+      "icon-based navigation",
+      "simple text listings",
+      "data tables"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T05:00:00.000Z"
+  }
+}
