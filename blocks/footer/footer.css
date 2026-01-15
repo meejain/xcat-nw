@@ -1,20 +1,108 @@
+/* Footer Block - Nationwide Style */
+
 footer {
-  background-color: var(--light-color);
+  background-color: rgb(1, 21, 70);
+  color: #fff;
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
 }
 
-footer .footer p {
+/* Three-column layout for link sections */
+footer .footer > div > div:first-child {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+}
+
+/* Section headings */
+footer .footer h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: none;
+}
+
+/* Links list */
+footer .footer ul {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .footer ul li {
+  margin: 0;
+  padding: 6px 0;
+}
+
+footer .footer a:any-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: opacity 0.2s;
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* Horizontal rule styling */
+footer .footer hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 24px 0;
+}
+
+/* Regulatory text */
+footer .footer p {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 16px;
+}
+
+footer .footer p:last-child {
+  margin-bottom: 0;
+}
+
+footer .footer p a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer .footer p a:hover {
+  text-decoration: none;
+}
+
+/* Desktop - three columns */
+@media (min-width: 600px) {
+  footer .footer > div > div:first-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  footer .footer {
+    padding: 56px 32px 40px;
+  }
+
+  footer .footer > div > div:first-child {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  footer .footer h2 {
+    font-size: 1.25rem;
   }
 }

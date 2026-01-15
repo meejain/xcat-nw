@@ -135,14 +135,32 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      const hasDropdown = navSection.querySelector('ul');
+      if (hasDropdown) {
+        navSection.classList.add('nav-drop');
+        // Prevent link navigation for dropdown items - toggle dropdown instead
+        const mainLink = navSection.querySelector(':scope > a');
+        if (mainLink) {
+          mainLink.addEventListener('click', (e) => {
+            if (isDesktop.matches) {
+              e.preventDefault();
+              e.stopPropagation();
+              const expanded = navSection.getAttribute('aria-expanded') === 'true';
+              toggleAllNavSections(navSections);
+              navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            }
+          });
         }
-      });
+      } else {
+        // Only add click handler for items without dropdowns
+        navSection.addEventListener('click', () => {
+          if (isDesktop.matches) {
+            const expanded = navSection.getAttribute('aria-expanded') === 'true';
+            toggleAllNavSections(navSections);
+            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          }
+        });
+      }
     });
   }
 
