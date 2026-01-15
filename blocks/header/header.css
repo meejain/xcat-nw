@@ -5,11 +5,61 @@ header {
 }
 
 header .nav-wrapper {
-  background-color: rgb(1, 21, 70);
   width: 100%;
   z-index: 100;
   position: sticky;
   top: 0;
+}
+
+/* Top Bar - Personal/Business - positioned above nav */
+header .nav-topbar {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+header .nav-topbar .default-content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header .nav-topbar .default-content-wrapper > ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+header .nav-topbar .default-content-wrapper > ul > li {
+  margin: 0;
+}
+
+header .nav-topbar .default-content-wrapper > ul > li > a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  color: rgb(1, 21, 70);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+
+header .nav-topbar .default-content-wrapper > ul > li > a:hover {
+  text-decoration: none;
+  border-bottom-color: rgb(1, 21, 70);
+}
+
+/* First item (Personal) - active state */
+header .nav-topbar .default-content-wrapper > ul > li:first-child > a {
+  font-weight: 600;
+  border-bottom-color: #c41230;
+}
+
+/* Main nav wrapper background */
+header nav {
+  background-color: rgb(1, 21, 70);
 }
 
 header nav {
