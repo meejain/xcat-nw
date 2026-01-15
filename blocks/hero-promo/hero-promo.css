@@ -1,0 +1,201 @@
+/* Hero Promo Block - Nationwide Style */
+
+.hero-promo-container {
+  background-color: rgb(1, 21, 70);
+}
+
+.hero-promo-container .hero-promo-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.hero-promo {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+  color: #fff;
+}
+
+.hero-promo > div {
+  display: contents;
+}
+
+.hero-promo > div > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Typography */
+.hero-promo h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.hero-promo h1 em {
+  display: block;
+  font-style: italic;
+  color: #c41230;
+}
+
+/* Description text */
+.hero-promo .hero-promo-description {
+  margin: 8px 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+  max-width: 480px;
+}
+
+/* Button styling */
+.hero-promo .button-container {
+  margin: 16px 0 0;
+}
+
+.hero-promo .button-container strong {
+  font-weight: normal;
+}
+
+.hero-promo .button-container .button {
+  display: inline-block;
+  background-color: #fff;
+  color: rgb(1, 21, 70);
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #fff;
+  transition: background-color 0.2s, color 0.2s;
+  margin: 0;
+}
+
+.hero-promo .button-container .button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Badges container */
+.hero-promo-badges {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hero-promo-badges p {
+  margin: 0;
+}
+
+.hero-promo-badges picture {
+  display: block;
+}
+
+.hero-promo-badges img {
+  width: auto;
+  height: auto;
+  max-width: 100px;
+  max-height: 80px;
+}
+
+/* Desktop layout - two columns */
+@media (min-width: 900px) {
+  .hero-promo {
+    padding: 60px 48px;
+    min-height: 420px;
+  }
+
+  .hero-promo > div > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 0 40px;
+    align-items: start;
+  }
+
+  /* Heading in left column */
+  .hero-promo h1 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+
+  .hero-promo h1 em {
+    display: inline;
+  }
+
+  /* Description in left column */
+  .hero-promo .hero-promo-description {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 20px 0 0;
+    font-size: 1.125rem;
+    max-width: 580px;
+  }
+
+  /* Button in left column */
+  .hero-promo .button-container {
+    grid-column: 1;
+    grid-row: 3;
+    margin: 32px 0 0;
+  }
+
+  /* Badges container - right column spanning all rows */
+  .hero-promo-badges {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-self: stretch;
+    margin: 0;
+    gap: 20px;
+  }
+
+  .hero-promo-badges p:last-child {
+    margin-top: auto;
+  }
+
+  .hero-promo-badges img {
+    max-width: 180px;
+    max-height: 160px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .hero-promo {
+    padding: 60px 64px 80px;
+  }
+
+  .hero-promo h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-promo > div > div {
+    gap: 0 60px;
+  }
+
+  .hero-promo-badges img {
+    max-width: 200px;
+    max-height: 180px;
+  }
+}
+
+/* Extra large desktop */
+@media (min-width: 1400px) {
+  .hero-promo h1 {
+    font-size: 4rem;
+  }
+
+  .hero-promo-badges img {
+    max-width: 220px;
+    max-height: 200px;
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-info",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-15T05:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nationwide.co.uk/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "informational-content",
+    "imagePattern": "charts-or-mixed"
+  },
+  "contentPattern": {
+    "structure": "content column + content column with text/images/links",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "help and support sections",
+      "comparison charts",
+      "informational two-column layouts",
+      "service quality metrics"
+    ],
+    "notSuitableFor": [
+      "dark background banners",
+      "promotional content",
+      "single column layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T05:00:00.000Z"
+  }
+}

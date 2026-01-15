@@ -1,0 +1,181 @@
+/* Columns Banner Block - Nationwide Style */
+
+.columns-banner-container {
+  background-color: rgb(1, 21, 70);
+}
+
+.columns-banner-container .columns-banner-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.columns-banner {
+  padding: 48px 24px;
+}
+
+.columns-banner > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-banner > div > div {
+  order: 1;
+}
+
+.columns-banner > div > .columns-banner-img-col {
+  order: 0;
+}
+
+.columns-banner > div > .columns-banner-img-col img {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.columns-banner h2 {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+.columns-banner p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.columns-banner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.columns-banner ul li {
+  padding: 10px 0;
+  padding-left: 36px;
+  position: relative;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.columns-banner ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Strong link inside list item becomes a button */
+.columns-banner ul li strong a {
+  display: inline-block;
+  background-color: #fff;
+  color: rgb(1, 21, 70) !important;
+  padding: 14px 24px;
+  border-radius: 4px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  transition: background-color 0.2s, color 0.2s;
+  margin-top: 8px;
+}
+
+.columns-banner ul li strong a:hover {
+  background-color: transparent;
+  color: #fff !important;
+}
+
+/* Hide checkmark for list items containing button links */
+.columns-banner ul li:has(strong a)::before {
+  display: none;
+}
+
+.columns-banner ul li:has(strong a) {
+  padding-left: 0;
+  padding-top: 16px;
+}
+
+.columns-banner .button-container {
+  margin: 0;
+}
+
+.columns-banner .button-container strong {
+  font-weight: normal;
+}
+
+.columns-banner .button,
+.columns-banner a.button {
+  background-color: #fff;
+  color: rgb(1, 21, 70);
+  padding: 14px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  transition: background-color 0.2s, color 0.2s;
+  margin: 0;
+}
+
+.columns-banner .button:hover,
+.columns-banner a.button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .columns-banner {
+    padding: 64px 32px;
+  }
+
+  .columns-banner > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .columns-banner > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  .columns-banner > div > .columns-banner-img-col {
+    order: unset;
+    flex: 0 0 auto;
+  }
+
+  .columns-banner > div > .columns-banner-img-col img {
+    max-width: 380px;
+  }
+
+  .columns-banner h2 {
+    font-size: 2.25rem;
+  }
+
+  .columns-banner p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .columns-banner > div > .columns-banner-img-col img {
+    max-width: 420px;
+  }
+}

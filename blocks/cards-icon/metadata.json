@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-icon",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-01-15T05:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nationwide.co.uk/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "icon-navigation",
+    "imagePattern": "icons"
+  },
+  "contentPattern": {
+    "structure": "icon image + text link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product category navigation",
+      "service overview grids",
+      "icon-based menus"
+    ],
+    "notSuitableFor": [
+      "content cards with descriptions",
+      "feature showcases with large images",
+      "article listings"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-15T05:00:00.000Z"
+  }
+}

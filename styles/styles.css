@@ -255,3 +255,31 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* Nationwide brand colors */
+:root {
+  --nw-navy: rgb(1, 21, 70);
+  --nw-red: #c41230;
+}
+
+/* Hide metadata block */
+.metadata-container {
+  display: none;
+}
+
+/* Section headings - Nationwide style */
+main > .section > div > h2:first-child {
+  text-align: center;
+  color: var(--nw-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+  margin: 0 0 32px;
+}
+
+@media (min-width: 900px) {
+  main > .section > div > h2:first-child {
+    font-size: 2.25rem;
+    margin: 0 0 40px;
+  }
+}

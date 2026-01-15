@@ -1,0 +1,105 @@
+/* Cards Feature Block - Nationwide Style */
+
+.cards-feature-container {
+  background-color: #fff;
+  padding: 0 0 48px;
+}
+
+.cards-feature-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cards-feature > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-feature > ul > li {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-feature .cards-feature-card-image {
+  line-height: 0;
+  background-color: rgb(1, 21, 70);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.cards-feature > ul > li img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.cards-feature .cards-feature-card-body {
+  padding: 28px 24px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-feature .cards-feature-card-body strong:first-child {
+  display: block;
+  color: rgb(1, 21, 70);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.cards-feature .cards-feature-card-body p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.cards-feature .cards-feature-card-body a {
+  color: rgb(1, 21, 70);
+  text-decoration: underline;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: auto;
+  display: inline-block;
+  padding-top: 16px;
+}
+
+.cards-feature .cards-feature-card-body a:hover {
+  text-decoration: none;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .cards-feature-container {
+    padding: 0 0 56px;
+  }
+
+  .cards-feature-wrapper {
+    padding: 0 32px;
+  }
+
+  .cards-feature > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .cards-feature .cards-feature-card-body {
+    padding: 32px 28px 36px;
+  }
+
+  .cards-feature .cards-feature-card-body strong:first-child {
+    font-size: 1.5rem;
+  }
+}
