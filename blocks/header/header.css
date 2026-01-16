@@ -5,62 +5,12 @@ header {
 }
 
 header .nav-wrapper {
+  background-color: rgb(1, 21, 70);
   width: 100%;
   z-index: 100;
   position: sticky;
   top: 0;
   border-bottom: 1px solid #36466C;
-}
-
-/* Top Bar - Personal/Business - positioned above nav */
-header .nav-topbar {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #e0e0e0;
-  width: 100%;
-}
-
-header .nav-topbar .default-content-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-header .nav-topbar .default-content-wrapper > ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 0;
-}
-
-header .nav-topbar .default-content-wrapper > ul > li {
-  margin: 0;
-}
-
-header .nav-topbar .default-content-wrapper > ul > li > a {
-  display: block;
-  padding: 8px 16px;
-  font-size: 0.875rem;
-  color: rgb(1, 21, 70);
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.2s;
-}
-
-header .nav-topbar .default-content-wrapper > ul > li > a:hover {
-  text-decoration: none;
-  border-bottom-color: rgb(1, 21, 70);
-}
-
-/* First item (Personal) - active state */
-header .nav-topbar .default-content-wrapper > ul > li:first-child > a {
-  font-weight: 600;
-  border-bottom-color: #c41230;
-}
-
-/* Main nav wrapper background */
-header nav {
-  background-color: rgb(1, 21, 70);
 }
 
 header nav {
@@ -70,21 +20,23 @@ header nav {
   font-family: var(--body-font-family);
 }
 
-/* Top bar with Personal/Business links */
-header nav .nav-top-bar {
+/* Top bar with Personal/Business links - Override .section defaults */
+header .section.nav-top-bar {
   display: none;
   background-color: #1A2C59;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: none;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-header nav .nav-top-bar .default-content-wrapper {
+header .section.nav-top-bar .default-content-wrapper {
   max-width: 1196px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-header nav .nav-top-bar .default-content-wrapper > ul {
+header .section.nav-top-bar .default-content-wrapper > ul {
   display: flex;
   list-style: none;
   padding: 0;
@@ -93,13 +45,13 @@ header nav .nav-top-bar .default-content-wrapper > ul {
   align-items: stretch;
 }
 
-header nav .nav-top-bar .default-content-wrapper > ul > li {
+header .section.nav-top-bar .default-content-wrapper > ul > li {
   position: relative;
   display: flex;
   align-items: stretch;
 }
 
-header nav .nav-top-bar .default-content-wrapper > ul > li > a {
+header .section.nav-top-bar .default-content-wrapper > ul > li > a {
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -110,12 +62,12 @@ header nav .nav-top-bar .default-content-wrapper > ul > li > a {
   position: relative;
 }
 
-header nav .nav-top-bar .default-content-wrapper > ul > li:first-child > a {
+header .section.nav-top-bar .default-content-wrapper > ul > li:first-child > a {
   background-color: rgb(1, 21, 70);
   padding: 12px 8px;
 }
 
-header nav .nav-top-bar .default-content-wrapper > ul > li:first-child > a::after {
+header .section.nav-top-bar .default-content-wrapper > ul > li:first-child > a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -125,11 +77,11 @@ header nav .nav-top-bar .default-content-wrapper > ul > li:first-child > a::afte
   background-color: #fff;
 }
 
-header nav .nav-top-bar .default-content-wrapper > ul > li > a:hover {
+header .section.nav-top-bar .default-content-wrapper > ul > li > a:hover {
   opacity: 0.8;
 }
 
-header nav .nav-top-bar .default-content-wrapper > ul > li:first-child > a:hover {
+header .section.nav-top-bar .default-content-wrapper > ul > li:first-child > a:hover {
   background-color: #1A2C59;
   opacity: 1;
 }
@@ -163,12 +115,12 @@ header nav a:hover {
 
 /* Search section - between brand and tools */
 header nav .nav-search {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 1;
   display: none;
   width: 282px;
   justify-self: end;
-  margin: 0 16px;
+  margin: 0 32px 0 0;
   background-color: #fff;
   border-radius: 0;
 }
@@ -346,7 +298,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul > li:first-chil
 
 /* Tools section */
 header nav .nav-tools {
-  grid-column: 4;
+  grid-column: 3;
   grid-row: 1;
   display: flex;
   align-items: center;
@@ -435,12 +387,30 @@ header nav .nav-tools .default-content-wrapper > ul > li:last-child > a::before 
 }
 
 header nav .nav-tools .default-content-wrapper > ul > li:last-child > a:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Hide dropdown menu by default */
+header nav .nav-tools .default-content-wrapper > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgb(1, 21, 70);
+  min-width: 250px;
+  padding: 16px;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+header nav .nav-tools .default-content-wrapper > ul > li:hover > ul {
+  display: block;
 }
 
 /* Hamburger/Menu button */
 header nav .nav-hamburger {
-  grid-column: 5;
+  grid-column: 4;
   grid-row: 1;
   display: flex;
   flex-direction: column;
@@ -546,7 +516,7 @@ header nav[aria-expanded='true'] .nav-sections .default-content-wrapper > ul > l
     flex-direction: column;
   }
   
-  header nav .nav-top-bar {
+  header .section.nav-top-bar {
     display: block;
   }
   
@@ -554,9 +524,13 @@ header nav[aria-expanded='true'] .nav-sections .default-content-wrapper > ul > l
     display: block;
   }
   
+  header nav .nav-tools {
+    display: flex;
+  }
+  
   header nav .nav-main-row,
   header nav[aria-expanded='true'] .nav-main-row {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto auto;
     grid-template-rows: auto auto;
     min-height: auto;
     align-items: center;
