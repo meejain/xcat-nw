@@ -179,9 +179,11 @@ header nav .nav-sections .default-content-wrapper > ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 4px;
+  gap: 0;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 header nav .nav-sections .default-content-wrapper > ul > li {
@@ -189,6 +191,7 @@ header nav .nav-sections .default-content-wrapper > ul > li {
   font-weight: 500;
   position: relative;
   white-space: nowrap;
+  flex: 1;
 }
 
 /* Nav item with dropdown indicator */
@@ -197,9 +200,11 @@ header nav .nav-sections .default-content-wrapper > ul > li > a {
   padding: 28px 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   font-size: 20px;
   font-weight: 700;
+  width: 100%;
 }
 
 header nav .nav-sections .default-content-wrapper > ul > li > a:hover {
@@ -289,11 +294,12 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul > li > a:hover:
   border-color: rgb(1, 21, 70);
 }
 
-/* First item in dropdown - highlighted */
+/* First item in dropdown - highlighted with blue top border */
 header nav .nav-sections .default-content-wrapper > ul > li > ul > li:first-child > a {
   color: rgb(1, 21, 70);
   font-weight: 500;
   border-left-color: rgb(1, 21, 70);
+  border-top: 3px solid #00A3E0;
 }
 
 /* Tools section */
@@ -391,21 +397,152 @@ header nav .nav-tools .default-content-wrapper > ul > li:last-child > a:hover {
   border-color: rgba(255, 255, 255, 0.85);
 }
 
+/* Login dropdown - positioned relative container */
+header nav .nav-tools .default-content-wrapper > ul > li:last-child {
+  position: relative;
+}
+
 /* Hide dropdown menu by default */
 header nav .nav-tools .default-content-wrapper > ul > li > ul {
-  display: none;
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgb(1, 21, 70);
-  min-width: 250px;
-  padding: 16px;
+  background-color: #fff;
+  min-width: 340px;
+  padding: 24px 32px 32px;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out, visibility 0.15s;
+  pointer-events: none;
 }
 
-/* Show dropdown on hover */
-header nav .nav-tools .default-content-wrapper > ul > li:hover > ul {
+/* Show dropdown on hover - keep visible when hovering button or dropdown */
+header nav .nav-tools .default-content-wrapper > ul > li:last-child:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Ensure the dropdown stays visible when hovering directly over it */
+header nav .nav-tools .default-content-wrapper > ul > li:last-child > ul:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Login dropdown heading styles - "Internet Banking" */
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:first-child {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(1, 21, 70);
+  margin-bottom: 20px;
+  padding-bottom: 0;
+}
+
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:first-child > a {
   display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(1, 21, 70);
+  text-decoration: none;
+  pointer-events: none;
+  padding: 0;
+}
+
+/* Primary login button in dropdown */
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(2) > a {
+  display: block;
+  background-color: rgb(1, 21, 70);
+  color: #fff;
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 2px;
+  margin-bottom: 12px;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+  border: none;
+}
+
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(2) > a:hover {
+  background-color: #1A2C59;
+  text-decoration: none;
+}
+
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(2) > a::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 7v3h6V7a3 3 0 1 0-6 0ZM7 7v3H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1h-2V7A5 5 0 0 0 7 7Zm-1 5v8h12v-8H6Zm6 2a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+/* Other links in Internet Banking section */
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(3) > a,
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(4) > a,
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(5) > a {
+  display: block;
+  color: rgb(1, 21, 70);
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(3) > a:hover,
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(4) > a:hover,
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(5) > a:hover {
+  color: #1A2C59;
+}
+
+/* "Other Nationwide services" heading */
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(6) {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(1, 21, 70);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(6) > a {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(1, 21, 70);
+  text-decoration: none;
+  pointer-events: none;
+  padding: 0;
+}
+
+/* Links under "Other Nationwide services" */
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(n+7) > a {
+  display: block;
+  color: rgb(1, 21, 70);
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+header nav .nav-tools .default-content-wrapper > ul > li > ul > li:nth-child(n+7) > a:hover {
+  color: #1A2C59;
 }
 
 /* Hamburger/Menu button */
