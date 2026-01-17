@@ -15,4 +15,32 @@ export default function decorate(block) {
       }
     });
   });
+
+  // Fix Call Checker section: move button from list item to after the list
+  const list = block.querySelector('ul');
+  if (list) {
+    const listItems = list.querySelectorAll('li');
+    listItems.forEach((li) => {
+      const strongLink = li.querySelector('strong a');
+      if (strongLink) {
+        // Extract just the text before the strong tag
+        const textNode = Array.from(li.childNodes).find(node => node.nodeType === 3);
+        if (textNode) {
+          li.textContent = textNode.textContent.trim();
+        }
+        
+        // Create button paragraph after the list
+        const buttonP = document.createElement('p');
+        buttonP.className = 'button-container';
+        const newLink = document.createElement('a');
+        newLink.href = strongLink.href;
+        newLink.textContent = strongLink.textContent;
+        newLink.className = 'button';
+        buttonP.appendChild(newLink);
+        
+        // Insert after the list
+        list.parentNode.insertBefore(buttonP, list.nextSibling);
+      }
+    });
+  }
 }

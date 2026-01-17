@@ -152,11 +152,11 @@
 
   .columns-banner > div > div {
     flex: 1;
-    order: unset;
+    order: 1; /* Text column on the left */
   }
 
   .columns-banner > div > .columns-banner-img-col {
-    order: unset;
+    order: 2; /* Image column on the right */
     flex: 0 0 auto;
   }
 

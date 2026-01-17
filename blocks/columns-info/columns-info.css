@@ -24,6 +24,16 @@
   order: 1;
 }
 
+/* First column (Internet banking) - light blue background */
+.columns-info > div > div:first-child {
+  background-color: rgb(241, 245, 255);
+}
+
+/* Second column (Search for help) - light gray background */
+.columns-info > div > div:last-child {
+  background-color: rgb(235, 235, 237);
+}
+
 /* No-cards variant for service quality sections */
 .columns-info.no-cards > div > div {
   background-color: transparent;
@@ -58,10 +68,10 @@
 /* Headings */
 .columns-info h2 {
   margin: 0 0 16px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: rgb(1, 21, 70);
+  font-family: var(--heading-font-family);
+  font-size: 1.75rem; /* 28px for mobile */
+  font-weight: 500; /* match main site */
+  color: rgb(2, 8, 30); /* match main site - very dark navy */
 }
 
 .columns-info h3 {
@@ -74,10 +84,10 @@
 
 /* Paragraphs */
 .columns-info p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 0 16px;
+  font-size: 1rem; /* 16px - reduced font size */
+  line-height: 1.5; /* Better line spacing */
+  color: rgb(78, 82, 98); /* match main site - medium gray */
+  margin: 0 0 20px; /* Increased bottom margin for better spacing */
 }
 
 /* Links */
@@ -88,6 +98,73 @@
 
 .columns-info a:hover {
   text-decoration: none;
+}
+
+/* Search box container - match main site exactly */
+.columns-info .search-box-container {
+  position: relative; /* For positioning the button inside */
+  display: block;
+  margin: 20px 0 24px;
+  border: 1px solid rgb(128, 131, 142); /* Match main site - light gray border */
+  border-radius: 4px;
+  background-color: #fff;
+  max-width: 502px; /* Match main site width */
+  height: 44px; /* Match main site - fixed height */
+}
+
+.columns-info .search-box-container input[type="search"] {
+  width: 100%;
+  padding: 8px 50px 8px 12px; /* Add padding on right for icon */
+  border: none;
+  font-size: 16px; /* Reduced for better fit */
+  font-family: var(--body-font-family);
+  color: rgb(78, 82, 98); /* Match main site */
+  background-color: transparent;
+  outline: none;
+  height: 100%; /* Fill container */
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.columns-info .search-box-container input[type="search"]::placeholder {
+  color: rgb(128, 131, 142);
+}
+
+.columns-info .search-box-container input[type="search"]:focus {
+  outline: none;
+  border: none;
+}
+
+.columns-info .search-box-container .search-button,
+.columns-info .search-box-container button {
+  position: absolute; /* Position inside the search bar */
+  right: 0;
+  top: 50%; /* Center vertically */
+  transform: translateY(-55%); /* Move slightly upward */
+  width: 44px; /* Match container height */
+  height: 44px; /* Match container height */
+  background-color: transparent; /* Match main site */
+  color: rgb(78, 82, 98);
+  border: none;
+  padding: 0;
+  margin: 0; /* Remove default button margin */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.columns-info .search-box-container .search-button:hover,
+.columns-info .search-box-container button:hover {
+  opacity: 0.8;
+}
+
+.columns-info .search-box-container .search-button svg,
+.columns-info .search-box-container button svg,
+.columns-info .search-box-container button img {
+  width: 24px;
+  height: 24px;
+  filter: none; /* Show original navy color */
 }
 
 /* Lists - Popular searches */
@@ -115,7 +192,7 @@
 
 /* Button styling - strong wrapped links become primary buttons */
 .columns-info p strong a {
-  display: inline-block;
+  display: block;
   background-color: rgb(1, 21, 70);
   color: #fff !important;
   padding: 14px 24px;
@@ -125,7 +202,9 @@
   font-size: 1rem;
   border: 2px solid rgb(1, 21, 70);
   transition: background-color 0.2s, color 0.2s;
-  margin: 16px 0 8px;
+  margin: 16px 0 8px 0;
+  text-align: left;
+  width: fit-content;
 }
 
 .columns-info p strong a:hover {
@@ -135,7 +214,7 @@
 
 /* Secondary button - link directly after strong in same paragraph */
 .columns-info p strong + a {
-  display: inline-block;
+  display: block;
   background-color: #fff;
   color: rgb(1, 21, 70) !important;
   padding: 14px 24px;
@@ -145,7 +224,9 @@
   font-size: 1rem;
   border: 2px solid rgb(1, 21, 70);
   transition: background-color 0.2s, color 0.2s;
-  margin: 8px 0 8px 12px;
+  margin: 0 0 8px 0;
+  text-align: left;
+  width: fit-content;
 }
 
 .columns-info p strong + a:hover {
@@ -206,6 +287,6 @@
   }
 
   .columns-info h2 {
-    font-size: 1.75rem;
+    font-size: 2.5rem; /* 40px on desktop - match main site */
   }
 }

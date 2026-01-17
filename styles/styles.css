@@ -290,15 +290,103 @@ main .section.highlight {
 main > .section > div > h2:first-child {
   text-align: center;
   color: var(--nw-navy);
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 1.75rem;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.1;
   margin: 0 0 32px;
 }
 
 @media (min-width: 900px) {
   main > .section > div > h2:first-child {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
+    line-height: 1.1;
     margin: 0 0 40px;
   }
+}
+
+/* Service quality sections - left align all text */
+.columns-info-container h2,
+.columns-info-container h3,
+.columns-info-container p,
+.columns-info h2,
+.columns-info h3,
+.columns-info p {
+  text-align: left !important;
+}
+
+/* Ensure all h3 headings in service quality sections match main site */
+main h3,
+main .section h3 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  color: rgb(2, 8, 30);
+  font-size: 1.75rem; /* 28px */
+  line-height: 1.2;
+}
+
+@media (min-width: 900px) {
+  main h3,
+  main .section h3 {
+    font-size: 1.75rem; /* 28px on desktop - match main site */
+  }
+}
+
+/* Links in service quality sections - match main site styling */
+main p a[href*="service-quality"],
+main p a[href*="psr.org.uk"] {
+  color: rgb(1, 21, 70) !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+main p a[href*="service-quality"]:hover,
+main p a[href*="psr.org.uk"]:hover {
+  text-decoration: underline !important;
+  background-color: transparent !important;
+}
+
+/* Add margin above Financial Conduct Authority Service Quality Metrics section */
+main h3:has(+ p a[href*="service-quality"]),
+main .section h3:has(+ p a[href*="service-quality"]) {
+  margin-top: 48px !important;
+}
+
+/* Branch Promise / Fairer Share section links */
+main > ul li p a,
+main > .section ul li p a {
+  /* Remove button styling */
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  
+  /* Apply link styling */
+  color: var(--nw-navy) !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  line-height: 1.1 !important;
+  border-bottom: 2px solid var(--nw-navy) !important;
+  padding-bottom: 2px !important;
+  max-width: none !important;
+  text-align: left !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  white-space: normal !important;
+}
+
+main > ul li p a:hover,
+main > .section ul li p a:hover {
+  text-decoration: none !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
 }
