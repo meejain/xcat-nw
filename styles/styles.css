@@ -119,6 +119,25 @@ h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
+/* Hero H1 override to match Nationwide site */
+main .section.hero-promo-container .hero-promo h1 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (width >= 900px) {
+  main .section.hero-promo-container .hero-promo h1 {
+    font-size: 70px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    max-width: 780px;
+    white-space: normal;
+  }
+}
+
 p,
 dl,
 ol,
