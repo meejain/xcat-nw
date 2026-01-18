@@ -52,24 +52,26 @@
 .cards-icon .cards-icon-card-body a,
 .cards-icon .cards-icon-card-body a.button {
   text-decoration: none;
-  color: rgb(1, 21, 70);
+  color: rgb(1, 21, 70) !important;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.4;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  border-radius: 0;
-  display: inline;
+  background: none !important;
+  border: none !important;
+  padding: 0 0 4px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  display: inline !important;
   white-space: normal;
+  border-bottom: 1px solid currentColor !important;
+  transition: border-color 0.2s ease;
 }
 
 .cards-icon .cards-icon-card-body a:hover,
 .cards-icon .cards-icon-card-body a.button:hover {
-  text-decoration: underline;
-  background: none;
-  color: rgb(1, 21, 70);
+  text-decoration: none;
+  background: none !important;
+  color: rgb(1, 21, 70) !important;
 }
 
 /* Tablet */
