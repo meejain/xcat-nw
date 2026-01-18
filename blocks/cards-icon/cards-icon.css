@@ -51,10 +51,10 @@
 
 .cards-icon .cards-icon-card-body a,
 .cards-icon .cards-icon-card-body a.button {
-  text-decoration: underline;
+  text-decoration: none;
   color: rgb(1, 21, 70);
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.4;
   background: none;
   border: none;
@@ -67,7 +67,7 @@
 
 .cards-icon .cards-icon-card-body a:hover,
 .cards-icon .cards-icon-card-body a.button:hover {
-  text-decoration: none;
+  text-decoration: underline;
   background: none;
   color: rgb(1, 21, 70);
 }
@@ -101,6 +101,6 @@
   }
 
   .cards-icon .cards-icon-card-body a {
-    font-size: 1.125rem;
+    font-size: 20px;
   }
 }
