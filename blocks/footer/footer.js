@@ -16,9 +16,48 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
-  // Add class to the first div (contains 3 columns)
-  if (footer.firstElementChild) {
-    footer.firstElementChild.classList.add('footer-columns');
+  // Check if content is flattened (published version) and restructure if needed
+  const firstSection = footer.querySelector('.default-content-wrapper');
+  if (firstSection) {
+    const h2Elements = firstSection.querySelectorAll('h2');
+    
+    // If we have multiple h2s in one wrapper, it's flattened - need to restructure
+    if (h2Elements.length > 1) {
+      const columnsWrapper = document.createElement('div');
+      columnsWrapper.classList.add('footer-columns');
+      
+      // Group each h2 with its following ul into separate column divs
+      h2Elements.forEach((h2) => {
+        const columnDiv = document.createElement('div');
+        const innerDiv = document.createElement('div');
+        
+        innerDiv.appendChild(h2.cloneNode(true));
+        
+        // Find the next ul sibling
+        let nextEl = h2.nextElementSibling;
+        while (nextEl && nextEl.tagName === 'UL') {
+          innerDiv.appendChild(nextEl.cloneNode(true));
+          nextEl = nextEl.nextElementSibling;
+          break; // Only take the first UL
+        }
+        
+        columnDiv.appendChild(innerDiv);
+        columnsWrapper.appendChild(columnDiv);
+      });
+      
+      // Replace the flattened content with structured columns
+      firstSection.replaceWith(columnsWrapper);
+    } else {
+      // Already structured, just add the class
+      if (footer.firstElementChild) {
+        footer.firstElementChild.classList.add('footer-columns');
+      }
+    }
+  } else {
+    // No default-content-wrapper, add class to first child
+    if (footer.firstElementChild) {
+      footer.firstElementChild.classList.add('footer-columns');
+    }
   }
 
   // Create a wrapper for the bottom section with regulatory text and social links
