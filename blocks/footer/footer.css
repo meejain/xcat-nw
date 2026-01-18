@@ -13,7 +13,7 @@ footer .footer {
 }
 
 /* Three-column layout for link sections */
-footer .footer > div > div:first-child {
+footer .footer .footer-columns {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
@@ -153,7 +153,7 @@ footer .footer .footer-copyright small {
 
 /* Desktop - three columns */
 @media (min-width: 600px) {
-  footer .footer > div > div:first-child {
+  footer .footer .footer-columns {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -163,7 +163,7 @@ footer .footer .footer-copyright small {
     padding: 56px 32px 40px;
   }
 
-  footer .footer > div > div:first-child {
+  footer .footer .footer-columns {
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
   }

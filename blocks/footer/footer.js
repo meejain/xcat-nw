@@ -16,6 +16,11 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // Add class to the first div (contains 3 columns)
+  if (footer.firstElementChild) {
+    footer.firstElementChild.classList.add('footer-columns');
+  }
+
   // Create a wrapper for the bottom section with regulatory text and social links
   const bottomSection = document.createElement('div');
   bottomSection.className = 'footer-social-copyright';
